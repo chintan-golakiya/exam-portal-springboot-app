@@ -1,0 +1,24 @@
+Mongodb schemas
+admin (id, username, password)
+users (id, username, password, email, usertype, status, createdBy)
+
+MySQL models
+
+admin(id, username, password)
+student(id, name, email, password, status)
+teacher(id, name, email, password, status, createdBy(admin->id))
+subject(id, name, createdBy(admin->id))
+test(id, title, maxmarks, startTime, endTime, Duration, RegStartTime, RegEndTime, ResultTime, Status, createdBy(teacher->id)
+test_subjects(test_id, subject_id)
+test_questions(test_id, question_id)
+test_allowedQuesTypes(test_id, questionTypeId)
+
+questionType(id, type)
+question(id, body, explaination, subject, answer(option->id), questionTypeId, mark, status, createdBy(teacher->id))
+options(id, option)
+ques_opt(question_id, option_id)
+
+answersheet(id, test_id, student_id, score, startTime, status(notstarted, ongoing, completed, cancelled))
+answers(answersheetid, questionid, answer(options->id)
+ 
+ 
